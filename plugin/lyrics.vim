@@ -27,9 +27,10 @@ fun! s:ShowLyrics(song, artist)
     let url            = substitute(url, 'xartistx', a:artist, "g")
     let lyrics         = s:DownloadLyrics(url)
     botright new
-    setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+    setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap paste
     silent! execute "normal! a " . a:song . " - " . a:artist . "\n\n" . lyrics
     silent! execute "normal! gg"
+    setlocal nopaste
 endfun
 
 fun! s:SpotifyLyrics()
