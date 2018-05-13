@@ -48,6 +48,7 @@ fun! s:SpotifyLyrics()
     let artist = substitute(artist, '\x1b\[.\{1,5\}m', '', 'g')
     let artist = substitute(artist, '^B\[m', '', 'g')
     let artist = substitute(artist, '^(B\[m', '', 'g')
+    let artist = substitute(artist, '^\[m', '', 'g')
     let song  = substitute(song, 'Track:', '', 'g')
     let song  = substitute(song, '- Single Remix', '', 'g')
 
